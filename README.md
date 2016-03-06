@@ -5,29 +5,13 @@ This projects aim is to help you to get started with Ambari.
 ## CLone Project
 ```
 git clone https://github.com/djkram/docker-ambari.git
+
+cd docker-ambari
 ```
 
 ## Install Docker
 
 Follow the description at the docker getting started page for your appropriate OS: ([Linux](http://docs.docker.com/linux/started/), [Mac](http://docs.docker.com/mac/started/), [Windows](http://docs.docker.com/windows/started/))
-
-### OSX
-Ambari containers started by ambari-function are using bridge networking. This means that you will not be able to communicate with containers directly
-from host unless you specify the route to containers. You can do this with:
-
-```
-# Getting the IP of docker-machine or boot2docker
-docker-machine ip <name-of-docker-vm>
-# or
-boot2docker ip
-
-# Setting up the
-sudo route add -net 172.17.0.0/16 <docker-machine or boot2docker>
-# e.g:
-sudo route add -net 172.17.0.0/16 192.168.99.100
-```
-**Note:**  the above mentioned route command will not survive a reboot and you need to execute again after reboot of your machine.
-
 
 ## Starting containers
 
@@ -63,31 +47,19 @@ amb-settings
 AMBARI_SERVER_IP=172.17.0.17
 ```
 
-## Cluster deployment via blueprint
+## Cluster deployment 
 
 Once the container is running, you can deploy a cluster. Instead of going to
 the webui, we can use ambari-shell, which can interact with ambari via cli,
-or perform automated provisioning. We will use the automated way, and of
-course there is a docker image, with prepared ambari-shell in it:
+or perform automated provisioning. 
 
 ```
-amb-shell
+amb-deploy-cluster
 ```
 
-Ambari-shell uses Ambari's [Blueprints](https://cwiki.apache.org/confluence/display/AMBARI/Blueprints)
-capability. It posts a cluster definition JSON to the ambari REST api,
-and 1 more json for cluster creation, where you specify which hosts go
-to which hostgroup.
 
-Ambari shell will show the progress in the upper right corner.
 
-## Multi-node Hadoop cluster
+## Ambari Multi-node Hadoop cluster on Google Cloud
+!https://github.com/GoogleCloudPlatform/bdutil/blob/master/platforms/hdp/README.md
 
-For the multi node Hadoop cluster instructions please take a look at [Cloudbreak](http://hortonworks.com/hadoop/cloudbreak/).
-
-If you don't want to check out the project from github, then just dowload the ambari-fuctions script, source it and deploy a
-an Ambari cluster:
-```
-curl -Lo .amb j.mp/docker-ambari && source .amb && amb-deploy-cluster
-```
 
