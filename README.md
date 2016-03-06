@@ -60,6 +60,6 @@ amb-deploy-cluster
 
 
 ## Ambari Multi-node Hadoop cluster on Google Cloud
-!https://github.com/GoogleCloudPlatform/bdutil/blob/master/platforms/hdp/README.md
+https://github.com/GoogleCloudPlatform/bdutil/blob/master/platforms/hdp/README.md
 
 
