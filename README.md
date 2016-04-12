@@ -24,7 +24,7 @@ which will launch all the necessary containers to create a fully functional clus
 For Windows:
 
 ```
-. ambari-functions or source ambari-functions
+. ambari-functions 
 ```
 
 For Mac & linux:
