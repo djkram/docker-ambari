@@ -20,12 +20,16 @@ Centos 7 with pre-installed Ambari 2.2.0 ready to install HDP 2.3.
 
 This git repository also contains an ambari-functions script
 which will launch all the necessary containers to create a fully functional cluster. Download the file and source it:
+
 For Windows:
-``
+
+```
 . ambari-functions or source ambari-functions
 ```
+
 For Mac & linux:
-``
+
+```
 source ambari-functions
 ```
 
